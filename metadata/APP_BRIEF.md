@@ -1,4 +1,4 @@
-<!-- gf-brief source=e7f951519c3062353830bef8d9cdd7fd580b4298cae48e8bb150dbf24f2b9af8 written=2026-11-24T04:59:27+03:00 -->
+<!-- gf-brief source=91399eea83bc1e275757f8aa4e2c1213a5a0906b8501cb12ac0c92485c0d3fba written=2026-11-24T05:06:29+03:00 -->
 # Ice Fishing FM
 
 ## What it is
