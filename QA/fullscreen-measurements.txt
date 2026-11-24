@@ -1,0 +1,14 @@
+Outermost centres of holes A, B, C and the hydrophone.
+Before: same clean scene, centres measured in original screenshots.
+After: same clean scene, from accessibility frames on the final simulator builds.
+
+iPhone 18 Pro portrait: 218 × 113 → 225 × 209 pt.
+iPad Air 13-inch (M4) portrait: 280 × 426 → 373 × 720 pt.
+iPad Air 13-inch (M4) landscape: 541 × 505 pt in the final build.
+
+Tight-line vertical projection in the first expedition, from tip to lure.
+iPhone 18 Pro portrait: 72 → 172 pt (final screenshot y=256 and y=428).
+iPad Air 13-inch (M4) portrait: 196 → 337 pt (final screenshot y=345 and y=682).
+QA/iphone-fullscreen-controls/xcodebuild.log:ACTIVE ICE first 402x874 stage centres 225x209 pt
+QA/ipad-fullscreen/xcodebuild.log:ACTIVE ICE first 1024x1366 stage centres 373x720 pt
+QA/ipad-fullscreen/xcodebuild.log:ACTIVE ICE landscape 1366x1024 stage centres 541x505 pt

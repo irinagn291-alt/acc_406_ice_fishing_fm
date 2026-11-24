@@ -1,0 +1,31 @@
+{
+  "profiles": [
+    {"id":"perch",     "notes":[392,523],                         "beats":[0.10,0.31],                               "loop":1.50,"depth":0,"lure":0},
+    {"id":"whitefish", "notes":[660,660,660],                     "beats":[0.13,0.48,0.83],                          "loop":1.56,"depth":0,"lure":2},
+    {"id":"char",      "notes":[352,494,440],                     "beats":[0.12,0.67,0.84],                          "loop":1.64,"depth":1,"lure":1},
+    {"id":"pike",      "notes":[220,594,698],                     "beats":[0.10,0.55,0.69],                          "loop":1.60,"depth":1,"lure":2},
+    {"id":"roach",     "notes":[520,580,520,580],                 "beats":[0.09,0.24,0.77,0.92],                     "loop":1.69,"depth":0,"lure":0},
+    {"id":"bream",     "notes":[590,390,320,480],                 "beats":[0.12,0.37,0.94,1.16],                     "loop":1.92,"depth":1,"lure":1},
+    {"id":"burbot",    "notes":[275,253,220],                     "beats":[0.12,0.30,0.98],                          "loop":1.76,"depth":1,"lure":2},
+    {"id":"grayling",  "notes":[400,510,620,510,400],             "beats":[0.11,0.28,0.45,0.62,0.79],                "loop":1.49,"depth":0,"lure":1},
+    {"id":"echo",      "notes":[890],                             "beats":[0.13],                                    "loop":0.82,"depth":0,"lure":0},
+    {"id":"clock",     "notes":[480,480,480,650,650],             "beats":[0.11,0.38,0.65,1.03,1.20],                "loop":1.90,"depth":1,"lure":0},
+    {"id":"pair",      "notes":[650,650,365,480],                 "beats":[0.11,0.28,0.71,0.99],                     "loop":1.72,"depth":1,"lure":0},
+    {"id":"tail",      "notes":[365,480,250],                     "beats":[0.11,0.39,0.94],                          "loop":1.61,"depth":1,"lure":0},
+    {"id":"beacon",    "notes":[480,480,480,650,650,365,480,250], "beats":[0.11,0.38,0.65,1.03,1.20,1.63,1.91,2.46], "loop":2.98,"depth":1,"lure":0}
+  ],
+  "levels": [
+    {"id":"double",    "lake":0,"source":"perch",     "tune":2,"route":[1],        "noise":0.14},
+    {"id":"third",     "lake":0,"source":"whitefish", "tune":1,"route":[2],        "noise":0.16},
+    {"id":"ledge",     "lake":0,"source":"char",      "tune":0,"route":[0],        "noise":0.18},
+    {"id":"copper",    "lake":0,"source":"bream",     "tune":3,"route":[2],        "noise":0.21,"echo":0,"fragment":"clock"},
+    {"id":"pass",      "lake":1,"source":"pike",      "tune":3,"route":[0,1,2,3],  "noise":0.25,"timed":true},
+    {"id":"hollow",    "lake":1,"source":"char",      "tune":2,"route":[2],        "noise":0.36,"echo":0},
+    {"id":"schools",   "lake":1,"source":"roach",     "tune":4,"route":[1,2,3],    "noise":0.28,"rival":"pike"},
+    {"id":"phrase",    "lake":1,"source":"bream",     "tune":0,"route":[3,2,1,0],  "noise":0.28,"timed":true,"fragment":"pair"},
+    {"id":"deep",      "lake":2,"source":"burbot",    "tune":4,"route":[2],        "noise":0.28,"echo":3},
+    {"id":"tangle",    "lake":2,"source":"grayling",  "tune":2,"route":[0,2,4],    "noise":0.32,"rival":"burbot"},
+    {"id":"quiet",     "lake":2,"source":"burbot",    "tune":1,"route":[4,3,2,1,0],"noise":0.30,"timed":true,"fragment":"tail"},
+    {"id":"broadcast", "lake":2,"source":"beacon",    "tune":3,"route":[3],        "noise":0.20}
+  ]
+}

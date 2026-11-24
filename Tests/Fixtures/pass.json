@@ -1,0 +1,59 @@
+{
+  "catches" : [
+    {
+      "fish" : "perch",
+      "hole" : 1,
+      "lake" : 0,
+      "minute" : 0,
+      "task" : "double"
+    },
+    {
+      "fish" : "whitefish",
+      "hole" : 2,
+      "lake" : 0,
+      "minute" : 0,
+      "task" : "third"
+    },
+    {
+      "fish" : "char",
+      "hole" : 0,
+      "lake" : 0,
+      "minute" : 0,
+      "task" : "ledge"
+    },
+    {
+      "fish" : "bream",
+      "hole" : 2,
+      "lake" : 0,
+      "minute" : 0,
+      "task" : "copper"
+    }
+  ],
+  "completed" : [
+    "double",
+    "third",
+    "ledge",
+    "copper"
+  ],
+  "fragments" : [
+    "clock"
+  ],
+  "muted" : false,
+  "sequence" : [
+
+  ],
+  "trip" : {
+    "depth" : 0,
+    "feedback" : "",
+    "id" : "pass",
+    "lure" : 0,
+    "minute" : 0,
+    "phase" : "listen",
+    "pins" : [
+
+    ],
+    "serial" : 0,
+    "strokes" : 0,
+    "tune" : 1
+  }
+}

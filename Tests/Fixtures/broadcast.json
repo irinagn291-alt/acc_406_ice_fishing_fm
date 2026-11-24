@@ -1,0 +1,117 @@
+{
+  "catches" : [
+    {
+      "fish" : "perch",
+      "hole" : 1,
+      "lake" : 0,
+      "minute" : 0,
+      "task" : "double"
+    },
+    {
+      "fish" : "whitefish",
+      "hole" : 2,
+      "lake" : 0,
+      "minute" : 0,
+      "task" : "third"
+    },
+    {
+      "fish" : "char",
+      "hole" : 0,
+      "lake" : 0,
+      "minute" : 0,
+      "task" : "ledge"
+    },
+    {
+      "fish" : "bream",
+      "hole" : 2,
+      "lake" : 0,
+      "minute" : 0,
+      "task" : "copper"
+    },
+    {
+      "fish" : "pike",
+      "hole" : 2,
+      "lake" : 1,
+      "minute" : 1,
+      "task" : "pass"
+    },
+    {
+      "fish" : "char",
+      "hole" : 2,
+      "lake" : 1,
+      "minute" : 0,
+      "task" : "hollow"
+    },
+    {
+      "fish" : "roach",
+      "hole" : 2,
+      "lake" : 1,
+      "minute" : 0,
+      "task" : "schools"
+    },
+    {
+      "fish" : "bream",
+      "hole" : 1,
+      "lake" : 1,
+      "minute" : 1,
+      "task" : "phrase"
+    },
+    {
+      "fish" : "burbot",
+      "hole" : 2,
+      "lake" : 2,
+      "minute" : 0,
+      "task" : "deep"
+    },
+    {
+      "fish" : "grayling",
+      "hole" : 2,
+      "lake" : 2,
+      "minute" : 0,
+      "task" : "tangle"
+    },
+    {
+      "fish" : "burbot",
+      "hole" : 2,
+      "lake" : 2,
+      "minute" : 1,
+      "task" : "quiet"
+    }
+  ],
+  "completed" : [
+    "double",
+    "third",
+    "ledge",
+    "copper",
+    "pass",
+    "hollow",
+    "schools",
+    "phrase",
+    "deep",
+    "tangle",
+    "quiet"
+  ],
+  "fragments" : [
+    "clock",
+    "pair",
+    "tail"
+  ],
+  "muted" : false,
+  "sequence" : [
+
+  ],
+  "trip" : {
+    "depth" : 0,
+    "feedback" : "",
+    "id" : "broadcast",
+    "lure" : 0,
+    "minute" : 0,
+    "phase" : "listen",
+    "pins" : [
+
+    ],
+    "serial" : 0,
+    "strokes" : 0,
+    "tune" : 1
+  }
+}
