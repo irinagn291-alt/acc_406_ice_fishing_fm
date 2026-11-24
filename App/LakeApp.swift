@@ -329,35 +329,43 @@ struct ExpeditionView: View {
     func recordings(side: Bool) -> some View {
         HStack(spacing: 5) {
             ForEach(game.trip.pins) { row in
-                VStack(alignment: .leading, spacing: 3) {
-                    HStack(spacing: 4) {
-                        Image(systemName: ["circle.fill", "triangle.fill", "diamond.fill"][row.id % 3])
-                            .font(.system(size: 7, weight: .black))
-                        Text(holeName(row.hole)).fontWeight(.heavy)
-                        Spacer(minLength: 0)
-                        Text(levelText(row.strength)).fontWeight(.bold)
-                    }
-                    HStack(spacing: 3) {
-                        Text(row.time).monospacedDigit()
-                        Spacer(minLength: 0)
-                        Image(systemName: row.depth == 0 ? "water.waves" : "arrow.down")
-                    }
-                    SignalTape(signal: .reading(row, game.campaign, noise: game.level.noise), phase: nil)
-                        .frame(height: 15)
-                        .background(ink, in: RoundedRectangle(cornerRadius: 4))
-                        .accessibilityHidden(true)
-                }
-                .font(side ? .caption : .caption2)
-                .padding(6)
-                .frame(maxWidth: .infinity)
-                .background(snow, in: RoundedRectangle(cornerRadius: 8))
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel(label("Hole %@", holeName(row.hole)) + ", " + row.time + ", " +
-                                    tr(depthKeys[row.depth]) + ", " + levelText(row.strength))
-                .accessibilityIdentifier("pin-\(row.id)")
+                recording(row, side: side)
             }
         }
         .padding(.horizontal, 6)
+    }
+
+    func recording(_ row: Reading, side: Bool) -> some View {
+        let hole = holeName(row.hole)
+        let strength = levelText(row.strength)
+        let accessibilityText = [label("Hole %@", hole), row.time, tr(depthKeys[row.depth]), strength]
+            .joined(separator: ", ")
+
+        return VStack(alignment: .leading, spacing: 3) {
+            HStack(spacing: 4) {
+                Image(systemName: ["circle.fill", "triangle.fill", "diamond.fill"][row.id % 3])
+                    .font(.system(size: 7, weight: .black))
+                Text(hole).fontWeight(.heavy)
+                Spacer(minLength: 0)
+                Text(strength).fontWeight(.bold)
+            }
+            HStack(spacing: 3) {
+                Text(row.time).monospacedDigit()
+                Spacer(minLength: 0)
+                Image(systemName: row.depth == 0 ? "water.waves" : "arrow.down")
+            }
+            SignalTape(signal: .reading(row, game.campaign, noise: game.level.noise), phase: nil)
+                .frame(height: 15)
+                .background(ink, in: RoundedRectangle(cornerRadius: 4))
+                .accessibilityHidden(true)
+        }
+        .font(side ? .caption : .caption2)
+        .padding(6)
+        .frame(maxWidth: .infinity)
+        .background(snow, in: RoundedRectangle(cornerRadius: 8))
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(accessibilityText)
+        .accessibilityIdentifier("pin-\(row.id)")
     }
 
     func returned(width: CGFloat, height: CGFloat) -> some View {
