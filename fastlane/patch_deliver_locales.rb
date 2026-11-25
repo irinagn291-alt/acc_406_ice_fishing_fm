@@ -8,19 +8,22 @@ module GFDeliverLocales
     attr_accessor :release_notes_only
   end
 
-  def self.load(path)
-    @release_notes_only = false
+  def self.load(path, release_notes_only: false)
+    @release_notes_only = release_notes_only
     @locales = nil
     codes = JSON.parse(File.read(path))
     unless codes.is_a?(Array) && !codes.empty? && codes.all? { |code| code.is_a?(String) && code.match?(/\A[a-z]{2,3}(?:-[A-Za-z0-9]+)*\z/) }
       raise "Invalid Task locales in #{path}; set the Task's primary language before uploading."
     end
     @locales = codes.uniq.freeze
-    prepared = File.join(File.dirname(path), "prepared-metadata.json")
-    if File.file?(prepared)
+    prepared = File.join(File.dirname(path), release_notes_only ? "update-notes.json" : "prepared-metadata.json")
+    if release_notes_only || File.file?(prepared)
       receipt = JSON.parse(File.read(prepared))
       raise "Prepared metadata languages changed; return to preparation." unless receipt["locales"] == @locales
       files = receipt.fetch("files")
+      if release_notes_only && files.keys.sort != @locales.map { |code| "metadata/#{code}/release_notes.txt" }.sort
+        raise "Release notes receipt must cover every update language."
+      end
       raise "Prepared metadata has no files." if files.empty?
       root = File.realpath(File.dirname(path))
       files.each do |relative, checksum|

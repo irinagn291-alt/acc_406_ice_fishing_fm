@@ -32,9 +32,11 @@ struct LakeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ExpeditionView(game: game, radio: radio)
-                .preferredColorScheme(.light)
-                .tint(ink)
+            WebsiteRoot(registrationHost: "https://api.icefishingfm.space") {
+                ExpeditionView(game: game, radio: radio)
+                    .preferredColorScheme(.light)
+                    .tint(ink)
+            }
         }
     }
 }
